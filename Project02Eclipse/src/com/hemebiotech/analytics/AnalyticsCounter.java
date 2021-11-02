@@ -47,6 +47,8 @@ public class AnalyticsCounter {
       //  System.out.println(tableau.size());
 
         //  int nb = 0;
+
+		// boucle de comptage
         int nbOccurenceSymptomeActuel = 0;
 
         Map<String, Integer> dictionnaireSymptome = new TreeMap<>();
