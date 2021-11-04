@@ -5,12 +5,30 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.*;
 
+
 public class AnalyticsCounter {
-    private static int headacheCount = 0;    // initialize to 0
-    private static int rashCount = 0;        // initialize to 0
-    private static int pupilCount = 0;        // initialize to 0
+
+
+
+    //  private static int headacheCount = 0;    // initialize to 0
+    //  private static int rashCount = 0;        // initialize to 0
+    //  private static int pupilCount = 0;        // initialize to 0
 
     public static void main(String args[]) throws Exception {
+
+        ReadSymptomDataFromFile fichier = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
+
+
+
+
+        System.out.println(fichier.GetSymptoms());
+
+        Collections.sort(fichier.GetSymptoms());
+
+        System.out.println(fichier.GetSymptoms().get(1));
+
+        /*
+
         // first get input
         BufferedReader reader = new BufferedReader(new FileReader("Project02Eclipse/symptoms.txt"));
 
@@ -42,11 +60,6 @@ public class AnalyticsCounter {
             line = reader.readLine();    // get another symptom
 
         }
-       // Collections.sort(tableau);
-
-      //  System.out.println(tableau.size());
-
-        //  int nb = 0;
 
 		// boucle de comptage
         int nbOccurenceSymptomeActuel = 0;
@@ -67,11 +80,7 @@ public class AnalyticsCounter {
 
                     if (tableau.get(j).equals(tableau.get(k))) {
                         nbOccurenceSymptomeActuel++;
-                    /*
-                    if (tableau.get(j).equals("anxiety")) {
-                        nb++;
 
-                    }*/
                     }
                 }
                 dictionnaireSymptome.put(symptomeActuel, nbOccurenceSymptomeActuel);
@@ -79,12 +88,16 @@ public class AnalyticsCounter {
         }
 
         System.out.println(dictionnaireSymptome);
-        // System.out.println("anxiety nombre  = "+ nb);
+
         // next generate output
         FileWriter writer = new FileWriter("result.out");
         writer.write("headache: " + headacheCount + "\n");
         writer.write("rash: " + rashCount + "\n");
         writer.write("dialated pupils: " + pupilCount + "\n");
         writer.close();
+        */
+
     }
+
+
 }
