@@ -17,7 +17,7 @@ public class CountSymptomDataFromFile implements ISymptomCount{
     public TreeMap CountSymptoms()  {
 
 
-        System.out.println(ArraySymptoms);
+      //  System.out.println(ArraySymptoms);
 
 
         // boucle de comptage
@@ -47,7 +47,7 @@ public class CountSymptomDataFromFile implements ISymptomCount{
                 }
             }
 
-            System.out.println(dictionnaireSymptome);
+          //  System.out.println(dictionnaireSymptome);
 
 
             return (TreeMap) dictionnaireSymptome;
@@ -57,6 +57,6 @@ public class CountSymptomDataFromFile implements ISymptomCount{
         }
         return null;
     }
-    
+
 
 }

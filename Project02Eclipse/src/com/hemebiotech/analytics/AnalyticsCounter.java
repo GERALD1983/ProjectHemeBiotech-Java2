@@ -8,33 +8,31 @@ import java.util.*;
 
 public class AnalyticsCounter {
 
-
+            /*
 
       private static int headacheCount = 0;    // initialize to 0
      private static int rashCount = 0;        // initialize to 0
      private static int pupilCount = 0;        // initialize to 0
-
+        */
     public static void main(String args[]) throws Exception {
 
-        /*
+
         ReadSymptomDataFromFile fichier = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
 
-
-
-
         System.out.println(fichier.GetSymptoms());
-
-        Collections.sort(fichier.GetSymptoms());
 
         System.out.println(fichier.GetSymptoms().get(1));
 
         CountSymptomDataFromFile tableau = new CountSymptomDataFromFile(fichier.GetSymptoms());
+
         System.out.println(tableau.CountSymptoms());
 
-        */
+        WriteSymptomDataFromFile resultat = new WriteSymptomDataFromFile(tableau.CountSymptoms());
+
+        System.out.println(resultat.WriteSymptoms());
 
 
-
+        /*
 
         // first get input
         BufferedReader reader = new BufferedReader(new FileReader("Project02Eclipse/symptoms.txt"));
@@ -113,7 +111,7 @@ public class AnalyticsCounter {
 
 
 
-
+        */
     }
 
 
