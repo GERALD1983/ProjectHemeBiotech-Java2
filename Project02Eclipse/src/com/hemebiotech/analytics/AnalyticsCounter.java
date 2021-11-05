@@ -16,6 +16,7 @@ public class AnalyticsCounter {
 
     public static void main(String args[]) throws Exception {
 
+
         ReadSymptomDataFromFile fichier = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
 
 
@@ -26,6 +27,12 @@ public class AnalyticsCounter {
         Collections.sort(fichier.GetSymptoms());
 
         System.out.println(fichier.GetSymptoms().get(1));
+
+        CountSymptomDataFromFile tableau = new CountSymptomDataFromFile(fichier.GetSymptoms());
+        System.out.println(tableau.CountSymptoms());
+
+
+
 
         /*
 
