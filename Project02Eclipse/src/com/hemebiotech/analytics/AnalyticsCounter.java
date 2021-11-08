@@ -10,13 +10,13 @@ public class AnalyticsCounter {
 
 
 
-    //  private static int headacheCount = 0;    // initialize to 0
-    //  private static int rashCount = 0;        // initialize to 0
-    //  private static int pupilCount = 0;        // initialize to 0
+      private static int headacheCount = 0;    // initialize to 0
+     private static int rashCount = 0;        // initialize to 0
+     private static int pupilCount = 0;        // initialize to 0
 
     public static void main(String args[]) throws Exception {
 
-
+        /*
         ReadSymptomDataFromFile fichier = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
 
 
@@ -31,10 +31,10 @@ public class AnalyticsCounter {
         CountSymptomDataFromFile tableau = new CountSymptomDataFromFile(fichier.GetSymptoms());
         System.out.println(tableau.CountSymptoms());
 
+        */
 
 
 
-        /*
 
         // first get input
         BufferedReader reader = new BufferedReader(new FileReader("Project02Eclipse/symptoms.txt"));
@@ -94,15 +94,25 @@ public class AnalyticsCounter {
             }
         }
 
-        System.out.println(dictionnaireSymptome);
+        System.out.println(dictionnaireSymptome.size());
 
         // next generate output
         FileWriter writer = new FileWriter("result.out");
-        writer.write("headache: " + headacheCount + "\n");
-        writer.write("rash: " + rashCount + "\n");
-        writer.write("dialated pupils: " + pupilCount + "\n");
+      //  writer.write("headache: " + headacheCount + "\n");
+    //    writer.write("rash: " + rashCount + "\n");
+    //    writer.write("dialated pupils: " + pupilCount + "\n");
+
+
+        for(Map.Entry mapelement : dictionnaireSymptome.entrySet()){
+            System.out.println("clé: "+mapelement.getKey()
+                    + " | valeur: " + mapelement.getValue());
+            writer.write(mapelement.getKey() + " : " + mapelement.getValue() + "\n");
+        }
+
         writer.close();
-        */
+
+
+
 
     }
 
