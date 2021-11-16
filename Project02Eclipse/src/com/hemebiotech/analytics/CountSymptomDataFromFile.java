@@ -7,38 +7,45 @@ import java.util.*;
 
 public class CountSymptomDataFromFile implements ISymptomCount{
 
-    private ArrayList ArraySymptoms;
+    private List<String> listSymptoms;
+    /**
+     *  List<String> une liste de chaine de caractere contenant des chaînes de symptômes
+    */
 
-    public CountSymptomDataFromFile (ArrayList ArraySymptoms) {
-        this.ArraySymptoms = ArraySymptoms;
+
+    /**
+     *
+     * @param listSymptoms la liste des symptomes que l on souhaite compter
+     */
+    public CountSymptomDataFromFile (List<String> listSymptoms) {
+        this.listSymptoms = listSymptoms;
     }
 
+    /**
+     *
+     * @return le dictionnaire Tree map classé par ordre alphabetique
+     */
+
     @Override
-    public TreeMap CountSymptoms()  {
+    public Map<String,Integer> countSymptoms()  {
 
-
-        System.out.println(ArraySymptoms);
-
-
-        // boucle de comptage
-        int nbOccurenceSymptomeActuel = 0;
 
 
         Map<String, Integer> dictionnaireSymptome = new TreeMap<>();
         try {
 
-            for (int j = 0; j < ArraySymptoms.size(); j++) {
+            for (int j = 0; j < listSymptoms.size(); j++) {
 
-                String symptomeActuel = (String) ArraySymptoms.get(j);
+                String symptomeActuel =  listSymptoms.get(j);
 
                 if (!dictionnaireSymptome.containsKey(symptomeActuel)) {
 
-                    nbOccurenceSymptomeActuel = 0;
+                 int  nbOccurenceSymptomeActuel = 0;
 
-                    for (int k = j; k < ArraySymptoms.size(); k++) {
+                    for (int k = j; k < listSymptoms.size(); k++) {
 
 
-                        if (ArraySymptoms.get(j).equals(ArraySymptoms.get(k))) {
+                        if (listSymptoms.get(j).equals(listSymptoms.get(k))) {
                             nbOccurenceSymptomeActuel++;
 
                         }
@@ -47,16 +54,13 @@ public class CountSymptomDataFromFile implements ISymptomCount{
                 }
             }
 
-            System.out.println(dictionnaireSymptome);
-
-
-            return (TreeMap) dictionnaireSymptome;
+            return  dictionnaireSymptome;
 
         } catch (Exception exception) {
             exception.printStackTrace();
         }
         return null;
     }
-    
+
 
 }
